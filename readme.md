@@ -12,24 +12,26 @@ Step-by-step install instructions:
 4
 
 ```
-[sudo] apt-get update
-[sudo] apt-get install build-essential libssl-dev curl -y
-curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh -o install_nvm.sh
+sudo apt update
+sudo apt install curl build-essential
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 bash install_nvm.sh
-[sudo] reboot
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+sudo reboot
 
-nvm install 12.6.0
+nvm install 18.12.1
 
-git clone --recurse-submodules https://github.com/3s3s/opentrade.git
+git clone --recurse-submodules https://github.com/sumcoinlabs/sumexchange.com.git sumexchange
 cd opentrade/accountsserver
 git checkout master
 cd ..
 
-[sudo] npm install 
-[sudo] npm install -g forever
+sudo npm install 
+sudo npm install -g forever
 ```
 
-## Here is an example of the file ~/opentrade/server/modules/private_constants.js Edit with your configs.
+## Here is an example of the file ~/sumexchange/server/modules/private_constants.js Edit with your configs.
 ```
 'use strict';
 
@@ -50,17 +52,17 @@ exports.walletspassphrase = {
 **After, you can run exchange**
 
 ```
-cd ~/opentrade/databaseServer
+cd ~/sumexchange/databaseServer
 [sudo] forever start main.js
-cd ~/opentrade/accountsserver
+cd ~/sumexchange/accountsserver
 git checkout master
 [sudo] forever start main.js
-cd  ~/opentrade/server
+cd  ~/sumexchange/server
 [sudo] forever start main.js
 ```
 
 In your browser address bar, type https://127.0.0.1
-You will see OpenTrade.
+You will see sumexchange.
 
 The first registered user will be exchange administrator. 
 
@@ -99,7 +101,7 @@ Also, you must encrypt your cryptocurrency wallet with this command.
 *If coin is not supported by encryption (like ZerroCash and it forks) the coin can not be added to OpenTrade.*
 
 
-Add your coin details to OpenTrade
+Add your coin details to sumexchange
 
 1. Register on exchange. The first registered user will be exchange administrator.
 2. Go to "Admin Area" -> "Coins" -> "Add coin"
@@ -110,9 +112,9 @@ Add your coin details to OpenTrade
 
 All visible coins should be appear in the Wallet. You should create default coin pairs now.
 
-File ~/opentrade/server/constants.js have settings that you can change
+File ~/sumexchange/server/constants.js have settings that you can change
 
-https://github.com/3s3s/opentrade/blob/master/server/constants.js
+https://github.com/sumcoinlabs/sumexchange.com/blob/master/server/constants.js
 
 ```
 exports.NOREPLY_EMAIL = 'no-reply@email.com'; //change no-reply email
@@ -128,7 +130,7 @@ exports.recaptcha_pub_key = "6LeX5SQUAAAAAKTieM68Sz4MECO6kJXsSR7_sGP1"; //change
 
 ```
 
-File ~/opentrade/static_pages/chart.html
+File ~/sumexchange/static_pages/chart.html
 
 ```
 const PORT_SSL = 40443; //change to your ssl port (usualy 443)
@@ -155,7 +157,7 @@ Litecoin LTbDdTijroJEyXt27apQSnuMY4RoXyjdq2
 
 # License
 
-OpenTrade is released under the terms of the MIT license. See LICENSE for more information or see https://opensource.org/licenses/MIT.
+sumexchange is released under the terms of the MIT license. See LICENSE for more information or see https://opensource.org/licenses/MIT.
 
 
 
