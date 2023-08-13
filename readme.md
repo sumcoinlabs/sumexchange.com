@@ -23,7 +23,7 @@ sudo reboot
 nvm install 18.12.1
 
 git clone --recurse-submodules https://github.com/sumcoinlabs/sumexchange.com.git sumexchange
-cd opentrade/accountsserver
+cd sumexchange/accountsserver
 git checkout master
 cd ..
 
