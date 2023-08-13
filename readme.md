@@ -32,6 +32,10 @@ sudo npm install -g forever
 ```
 
 ## Here is an example of the file ~/sumexchange/server/modules/private_constants.js Edit with your configs.
+
+```
+cp server/modules/private_constants_templates.js private_constants.js
+```
 ```
 'use strict';
 
