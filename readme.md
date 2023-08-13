@@ -58,12 +58,12 @@ exports.walletspassphrase = {
 
 ```
 cd ~/sumexchange/databaseServer
-[sudo] forever start main.js
+sudo forever start main.js
 cd ~/sumexchange/accountsserver
 git checkout master
-[sudo] forever start main.js
+sudo forever start main.js
 cd  ~/sumexchange/server
-[sudo] forever start main.js
+sudo forever start main.js
 ```
 
 In your browser address bar, type https://127.0.0.1
