@@ -66,6 +66,15 @@ cd  ~/opentrade/server
 sudo forever start main.js
 ```
 
+### To start the service run
+
+cd ~/opentrade/databaseServer
+forever start main.js
+cd ~/opentrade/accountsserver
+forever start main.js
+cd  ~/opentrade/server
+forever start main.js
+
 In your browser address bar, type https://127.0.0.1
 You will see sumexchange.
 
