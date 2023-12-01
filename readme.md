@@ -57,12 +57,12 @@ exports.walletspassphrase = {
 **After, you can run exchange**
 
 ```
-cd ~/sumexchange/databaseServer
+cd ~/opentrade/databaseServer
 sudo forever start main.js
-cd ~/sumexchange/accountsserver
+cd ~/opentrade/accountsserver
 git checkout master
 sudo forever start main.js
-cd  ~/sumexchange/server
+cd  ~/opentrade/server
 sudo forever start main.js
 ```
 
